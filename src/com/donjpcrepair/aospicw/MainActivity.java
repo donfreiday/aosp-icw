@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    TextView status; 
+    private TextView status; 
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,5 @@ public class MainActivity extends Activity {
             }
         }
         return false;
-    }
-    
+    } 
 }
