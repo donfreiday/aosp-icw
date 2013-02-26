@@ -32,28 +32,12 @@ public class MainActivity extends Activity {
     
     public void startService(View v) {
         startService(new Intent(this, AOSPICWService.class));
-        
         status.setText("Service started.");
-        
-        Notification.Builder builder = new Notification.Builder(getApplicationContext());
-        Intent i = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, i, Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        builder.setContentTitle("AOSP Call Workaround");
-        builder.setSubText("Service is running.");
-        builder.setContentIntent(pendingIntent);
-        builder.setTicker("AOSP Call Workaround");
-        builder.setSmallIcon(R.drawable.ic_launcher);;
-        builder.setPriority(0);
-        builder.setOngoing(true);
-        Notification notification = builder.build();
-        NotificationManager notificationManager = 
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, notification);
+
     }
     
     public void stopService(View v) {
         stopService(new Intent(this, AOSPICWService.class));
-        
         status.setText("Service stopped.");
         
         NotificationManager notificationManager = 
